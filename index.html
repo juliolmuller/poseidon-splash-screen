@@ -27,12 +27,141 @@
         min-height: 100%;
         width: 100%;
       }
+
+      .splash__container {
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 9999;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: hsl(200, 40%, 30%);
+        /* background: #ffffff; */
+        padding: 2rem;
+      }
+
+      .splash {
+        animation: 2s wholeLogo;
+        transform-origin: center;
+        height: 100%;
+        max-height: 12%;
+        min-height: 100px;
+        width: auto;
+        color: white;
+      }
+
+      .splash__logo {
+        transform-origin: inherit;
+      }
+
+      .splash__divider {
+        animation: rotate 800ms linear 1600ms;
+        animation-fill-mode: both;
+        transform-origin: inherit;
+      }
+
+      .splash__text {
+        transform-origin: inherit;
+      }
+      /* "P"oseidon */.splash__text:nth-child(3) {
+        animation: slideIn 300ms ease-out 1700ms;
+        animation-fill-mode: both;
+      }
+      /* P"o"seidon */.splash__text:nth-child(4) {
+        animation: slideIn 300ms ease-out 1700ms;
+        animation-fill-mode: both;
+      }
+      /* Po"s"eidon */.splash__text:nth-child(5) {
+        animation: slideIn 300ms ease-out 1750ms;
+        animation-fill-mode: both;
+      }
+      /* Pos"e"idon */.splash__text:nth-child(6) {
+        animation: slideIn 300ms ease-out 1800ms;
+        animation-fill-mode: both;
+      }
+      /* Pose"i"don */.splash__text:nth-child(7) {
+        animation: slideIn 300ms ease-out 1850ms;
+        animation-fill-mode: both;
+      }
+      /* Posei"d"on */.splash__text:nth-child(8) {
+        animation: slideIn 300ms ease-out 1900ms;
+        animation-fill-mode: both;
+      }
+      /* Poseid"o"n */.splash__text:nth-child(9) {
+        animation: slideIn 300ms ease-out 1950ms;
+        animation-fill-mode: both;
+      }
+      /* Poseido"n" */.splash__text:nth-child(10) {
+        animation: slideIn 300ms ease-out 2000ms;
+        animation-fill-mode: both;
+      }
+
+      #root:not(:empty) + .splash__container {
+        animation: 400ms ghost 2500ms;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes wholeLogo {
+        0% {
+          opacity: 0;
+          transform: scale(150%) translateX(43.3%);
+        }
+        20% {
+          opacity: 1;
+          transform: scale(180%) translateX(43.3%);
+        }
+        40% {
+          transform: scale(180%) translateX(43.3%);
+        }
+        65% {
+          transform: scale(100%) translateX(43.3%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes rotate {
+        from {
+          visibility: visible;
+          transform: rotateX(90deg);
+        }
+        to {
+          transform: rotateX(0);
+        }
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(20%);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes ghost {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
     </style>
   </head>
   <body>
-    <div id="root">
-      <!-- the SPA will be mounted here -->
-    </div>
+    <div id="root"></div>
+    <!-- the SPA will be mounted here -->
 
     <div class="splash__container">
       <svg class="splash" width="212" height="66" viewBox="0 0 212 66" fill="none" xmlns="http://www.w3.org/2000/svg">
